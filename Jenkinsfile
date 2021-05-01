@@ -2,7 +2,7 @@
 pipeline {
     agent any
     stages {
-        stage('Installing Dependencies') {
+/*         stage('Installing Dependencies') {
             steps {
                 sh '''#!/bin/bash
                     python3 -m venv ~/.devops
@@ -12,7 +12,7 @@ pipeline {
                 echo "Dependencies Installation Successful"
             }
         }
-
+ */
         stage('Linting') {
             steps {
                 sh '''#!/bin/bash
