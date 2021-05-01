@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Installing Dependencies') {
             steps {
-                sh 'sudo apt-get install python3-venv'
+                sh 'sudo apt-get install python3-venv python-pip-whl python3.8-venv'
                 sh '''#!/bin/bash
                     python3 -m venv ~/.devops
 	                  source ~/.devops/bin/activate
