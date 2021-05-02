@@ -28,7 +28,8 @@ pipeline {
                 sh '''#!/bin/bash
                     source ~/.devops/bin/activate
                     sudo docker build --tag=capstone
-                    sudo ./upload_docker.sh
+                    ls -a
+                    sudo ~/upload_docker.sh
                 '''
                 echo "Building Successful"
             }
