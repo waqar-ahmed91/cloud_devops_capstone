@@ -11,7 +11,6 @@ COPY . app.py /app/
 # hadolint ignore=DL3013
 RUN pip install --upgrade pip &&\
     pip install --trusted-host pypi.python.org -r requirements.txt
-wget -O ./hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 && chmod +x ./hadolint
 ## Step 4:
 # Expose port 80
 EXPOSE 80
