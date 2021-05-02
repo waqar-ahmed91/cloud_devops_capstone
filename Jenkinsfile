@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('Installing Dependencies') {
             steps {
-                sh '''#!/bin/bash
-                    python3 -m venv ~/.devops
+                sh '''
 	                  source ~/.devops/bin/activate
                     make install 
                 '''
@@ -15,7 +14,7 @@ pipeline {
 
         stage('Linting') {
             steps {
-                sh '. ~/.devops/bin/activate && make lint'
+                sh 'source ~/.devops/bin/activate && make lint'
                 ech0 "Linting Successful"
             }
         }
