@@ -29,9 +29,9 @@ pipeline {
                     source ~/.devops/bin/activate
                     sudo docker build --tag=capstone
                     ls -a
-                    sudo /upload_docker.sh
+                    upload_docker.sh
                 '''
-                echo "Building Successful"
+                echo "Build Successful"
             }
         }
          stage('Deployment') {
