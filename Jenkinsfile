@@ -16,7 +16,6 @@ pipeline {
         stage('Linting') {
             steps {
                 sh '''#!/bin/bash
-                    source ~/.devops/bin/activate
                     sudo make lint
                 '''
                 ech0 "Linting Successful"
