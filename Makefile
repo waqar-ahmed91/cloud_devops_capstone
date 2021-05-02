@@ -14,9 +14,8 @@ install:
 	# This should be run from inside a virtualenv
 	pip3 install --upgrade pip &&\
 		pip3 install -r requirements.txt
-	brew install hadolint
 hadolint:
-	wget -O hadolint https://github.com/hadolint/hadolint/releases/download/v1.1/hadolint_linux_amd64 &&\sudo chmod +x hadolint &&\sudo mv hadolint /usr/bin/
+	wget -O hadolint https://github.com/hadolint/hadolint/releases/download/v1.1/hadolint_linux_amd64 && sudo chmod +x /bin/hadolint
 
 
 test:
