@@ -19,7 +19,7 @@ pipeline {
                     ls -a
                     hadolint Dockerfile
                 '''
-                ech0 "Linting Successful"
+                echo "Linting Successful"
             }
         }
 
