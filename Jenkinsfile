@@ -13,10 +13,11 @@ pipeline {
             }
         }
 
-        stage('Linting') {
+        stage('Linting Docker File') {
             steps {
                 sh '''#!/bin/bash
-                    sudo make lint
+                    ls -a
+                    hadolint Dockerfile --ignore=DL3013
                 '''
                 ech0 "Linting Successful"
             }
