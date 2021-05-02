@@ -17,8 +17,8 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                     ls -a
-                    hadolint Dockerfile --ignore=DL3013
                 '''
+                sh 'hadolint Dockerfile --ignore DL3013'
                 ech0 "Linting Successful"
             }
         }
