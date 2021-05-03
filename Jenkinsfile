@@ -25,13 +25,16 @@ pipeline {
 
         stage('Building Docker Image') {
             steps {
+                withDockerRegistry([url: "", credentialsId: "dockerhub"]) {
                 sh '''#!/bin/bash
                     source ~/.devops/bin/activate
                     ls -a
                 '''
-                sh 'sudo ./upload_docker.sh'
+                sh './upload_docker.sh'
                 echo "Build Successful"
+            } 
             }
+
         }
          stage('Deployment') {
               steps{
