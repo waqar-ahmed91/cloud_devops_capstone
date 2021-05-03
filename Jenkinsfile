@@ -23,7 +23,7 @@ pipeline {
             }
         }
 
-        stage('Building Docker Image') {
+        stage('Building and Pushing Docker Image') {
             steps {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
                     sh '''#!/bin/bash
@@ -51,7 +51,7 @@ pipeline {
         }
         stage("Cleaning") {
               steps{
-                    sh "docker system prune -f"
+                    sh "docker system prune -a"
                     echo "Cleaning Complete"
               }
         }
