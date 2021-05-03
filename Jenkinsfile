@@ -29,7 +29,7 @@ pipeline {
                     sh '''#!/bin/bash
                         source ~/.devops/bin/activate
                         sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-                        sudo docker build -t capstone .
+                        sudo docker build -t vickydavid/capstone .
                         sudo docker tag vickydavid/capstone
                         sudo docker push vickydavid/capstone
                         
