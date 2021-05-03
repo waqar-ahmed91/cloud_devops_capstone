@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - image: vickydavid/capstone
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           name: capstone
           ports:
             - containerPort: 80
