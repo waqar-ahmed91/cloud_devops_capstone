@@ -29,8 +29,8 @@ pipeline {
                     sh '''#!/bin/bash
                         source ~/.devops/bin/activate
                         sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-                        sudo docker build -t vickydavid/capstone .
-                        sudo docker tag vickydavid/capstone
+                        sudo docker build -t capstone .
+                        sudo docker tag capstone vickydavid/capstone
                         sudo docker push vickydavid/capstone
                         
                     '''
@@ -44,8 +44,14 @@ pipeline {
                   withAWS(credentials: 'ecr-credentials', region: 'us-west-2') {
                       sh "aws eks --region us-west-2 update-kubeconfig --name jenkins"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:127160062615:cluster/jenkins"
+                      sh "kubectl set image deployments/capstone capstone=vickydavid/capstone"
                       sh "kubectl apply -f deployment.yml"
+                      sh "kubectl get nodes"
+                      sh "kubectl get deployment"
+                      sh "kubectl get pod -o wide"
+                      sh "kubectl get service/capstone"
                       echo "Successful Deployment"
+
                   }
               }
         }
