@@ -30,6 +30,7 @@ pipeline {
                         source ~/.devops/bin/activate
                         sudo docker build -t capstone .
                         sudo docker tag capstone vickydavid/capstone
+                        sudo docker login
                         sudo docker push vickydavid/capstone
                         
                     '''
