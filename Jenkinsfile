@@ -29,7 +29,7 @@ pipeline {
                     source ~/.devops/bin/activate
                     ls -a
                 '''
-                sh './upload_docker.sh'
+                sh 'sudo ./upload_docker.sh'
                 echo "Build Successful"
             }
         }
