@@ -44,7 +44,6 @@ pipeline {
                   withAWS(credentials: 'ecr-credentials', region: 'us-west-2') {
                       sh "aws eks --region us-west-2 update-kubeconfig --name jenkins"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:127160062615:cluster/jenkins"
-                      sh "kubectl set image deployments/capstone capstone=vickydavid/capstone"
                       sh "kubectl apply -f deployment.yml"
                       sh "kubectl get nodes"
                       sh "kubectl get deployment"
