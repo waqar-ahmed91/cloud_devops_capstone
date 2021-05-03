@@ -29,9 +29,9 @@ pipeline {
                     sh '''#!/bin/bash
                         source ~/.devops/bin/activate
                         sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-                        sudo docker build -t capstone .
-                        sudo docker tag capstone vickydavid/capstone
-                        sudo docker push vickydavid/capstone
+                        sudo docker build -t capstone:latest .
+                        sudo docker tag capstone:lastest vickydavid/capstone:latest
+                        sudo docker push vickydavid/capstone:latest
                         
                     '''
                     echo "Build Successful"
