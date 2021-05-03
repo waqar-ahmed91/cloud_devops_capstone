@@ -44,7 +44,7 @@ pipeline {
                   withAWS(credentials: 'ecr-credentials', region: 'us-west-2') {
                       sh "aws eks --region us-west-2 update-kubeconfig --name jenkins"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:127160062615:cluster/jenkins"
-                      sh "kubectl apply -f deployment.yaml"
+                      sh "kubectl apply -f deployment.yml"
                       echo "Successful Deployment"
                   }
               }
