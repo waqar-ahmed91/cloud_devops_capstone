@@ -30,7 +30,7 @@ pipeline {
                         source ~/.devops/bin/activate
                         sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
                         sudo docker build -t capstone:latest .
-                        sudo docker tag capstone:lastest vickydavid/capstone:latest
+                        sudo docker tag capstone:latest vickydavid/capstone:latest
                         sudo docker push vickydavid/capstone:latest
                         
                     '''
