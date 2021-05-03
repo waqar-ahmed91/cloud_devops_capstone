@@ -26,12 +26,14 @@ pipeline {
         stage('Building Docker Image') {
             steps {
                 withDockerRegistry([url: "", credentialsId: "dockerhub"]) {
-                sh '''#!/bin/bash
-                    source ~/.devops/bin/activate
-                    ls -a
-                '''
-                sh './upload_docker.sh'
-                echo "Build Successful"
+                    sh '''#!/bin/bash
+                        source ~/.devops/bin/activate
+                        sudo docker build -t capstone .
+                        sudo docker tag capstone vickydavid/capstone
+                        sudo docker push vickydavid/capstone
+                        
+                    '''
+                    echo "Build Successful"
             } 
             }
 
