@@ -30,7 +30,7 @@ pipeline {
                         source ~/.devops/bin/activate
                         sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
                         sudo docker build -t capstone .
-                        sudo docker tag capstone vickydavid/capstone
+                        sudo docker tag vickydavid/capstone
                         sudo docker push vickydavid/capstone
                         
                     '''
@@ -51,7 +51,7 @@ pipeline {
         }
         stage("Cleaning") {
               steps{
-                    sh "docker system prune -a"
+                    sh "docker system prune"
                     echo "Cleaning Complete"
               }
         }
