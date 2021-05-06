@@ -21,7 +21,7 @@ spec:
         app: capstone
     spec:
       containers:
-        - image: vickydavid/capstone:latest
+        - image: 127160062615.dkr.ecr.us-west-2.amazonaws.com/capstone:latest
           imagePullPolicy: Always
           name: capstone
           ports:
