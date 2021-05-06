@@ -30,10 +30,9 @@ pipeline {
                     sh '''#!/bin/bash
                         source ~/.devops/bin/activate
                         sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-                        sudo docker login -u AWS -p $(aws ecr get-login-password --region us-west-2) 127160062615.dkr.ecr.us-west-2.amazonaws.com
                         sudo docker build -t capstone:latest .
-                        sudo docker tag capstone:latest 127160062615.dkr.ecr.us-west-2.amazonaws.com/capstone:latest
-                        sudo docker push 127160062615.dkr.ecr.us-west-2.amazonaws.com/capstone
+                        sudo docker tag capstone:latest vickydavid/capstone:latest
+                        sudo docker push vickydavid/capstone:latest
                         
                     '''
                     echo "Build Successful"
