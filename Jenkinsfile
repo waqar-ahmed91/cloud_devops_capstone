@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh '''#!/bin/bash
                     python3 -m venv ~/.devops
-	                  source ~/.devops/bin/activate
+	                source ~/.devops/bin/activate
                     make install 
                 '''
                 echo "Dependencies Installation Successful"
@@ -16,6 +16,7 @@ pipeline {
         stage('Linting Docker File') {
             steps {
                 sh '''#!/bin/bash
+                    source ~/.devops/bin/activate
                     ls -a
                     hadolint Dockerfile
                 '''
