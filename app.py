@@ -22,7 +22,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
+    html = "<h3>Hi My Name is Waqar and it is my Udacity CloudDevOps Engineer Capstone Project and it is about Sklearn Prediction Home</h3>"
     return html.format(format)
 
 
