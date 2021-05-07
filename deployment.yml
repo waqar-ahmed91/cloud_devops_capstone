@@ -26,8 +26,6 @@ spec:
           name: capstone
           ports:
             - containerPort: 80
-          command: ["sleep"]
-          args: ["infinity"]
 
 ---
 apiVersion: v1
