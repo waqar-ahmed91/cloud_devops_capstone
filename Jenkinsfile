@@ -50,7 +50,7 @@ pipeline {
                       sh "kubectl get deployment"
                       sh "kubectl get pod -o wide"
                       sh "kubectl get service/capstone"
-                      echo "Successful Deployment"
+                      echo "Deployment Sucessful"
 
                   }
               }
@@ -58,7 +58,7 @@ pipeline {
         stage("Cleaning") {
               steps{
                     sh "docker system prune"
-                    echo "Cleaning Complete"
+                    echo "Cleaning Completed"
               }
         }
      }
