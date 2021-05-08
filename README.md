@@ -10,7 +10,7 @@ I used the machine learning microservices app that can predict the house prices 
 
 ### Cluster Creation
 
-AWS **EKSCTL** is used to create the cluster which uses cloudformation process to create the cluster stack. 1.18 version has been used with t2.medium node type having maximum three nodes and minimum one. I also used t2.small node type with 1.17 version but that was not work out well for the app deployment because of not supported version and node type.
+AWS **EKSCTL** is used to create the cluster which uses cloudformation process to create the cluster stack. **1.18 version** has been used with **t2.medium** node type having **maximum three nodes** and **minimum one**. I also used t2.small node type with 1.17 version but that was not work out well for the app deployment because of not supported version and node type.
 
 # To Run the App Locally Before Deploying it on the Cloud:
 
